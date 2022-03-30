@@ -214,11 +214,4 @@ function getLevelsFullDetails(cous){
   
 }
 
-/**
- * A simple program that takes  an array of objects and verfies if the course entered is offered in the Telecommunicvation
- * department and prints the courecode , title , lecturer and a link to it past question
- * this program can be improve upon and be used in the NATECSS website 
- */
-{/* <img src="img/emman.jpg" alt="">
-<img src="img/joe.jpg" alt=""></img> */}
-// array of objects named TCScourseOutline 
+
