@@ -81,10 +81,14 @@ let TCScousreOutline = [
 
 ];// end of array
 
+
+
+
 const getInput = document.getElementById("input-form");
 const getButton = document.getElementById('check');
 const getContainer = document.getElementById("container")
 const getContainer2 = document.getElementById("container2");
+const getLevelMessage = document.getElementById("level-message");
 
 getButton.addEventListener("click",
 function(){
@@ -111,6 +115,8 @@ function(){
 
   getInput.value = "" // take the input form value back to it placeholder
 })
+
+
 // a function is declared named getCourseDetails which takes the course code as its argument and provides a way
 //to loop around the array 
 function getCourseDetails(course_Code){
@@ -163,6 +169,8 @@ function getCourseDetails(course_Code){
   }
 }
 
+
+
 /*this function getLevelFullDetails() function is the function responsible for printing out the course done in a particular level
 for example if one is in 200 lvl in TCS, instead of checking for a particular course he decided to check all the course done in his level and 
 this function is responsible for doing that , it takes cous as a parameter which is the first number that representd that level for example 200 who has a cous 0f 2 
@@ -172,6 +180,16 @@ which is given to perform certain analysis in the code
 function getLevelsFullDetails(cous){
   let storeLastvalue;
   getContainer.innerHTML = " ";// emptys the other function container
+  TCScousreOutline.sort( function(a,b){
+    if(a.courseCode[a.courseCode.length-1] % 2 === 0){
+      return 1;
+    }
+  else if (a.courseCode[a.courseCode.length -1] % 2 !== 0){
+    return -1
+  }
+  return 0
+  
+})// used to sort the array 
   let detailsInfo;
 
   for(let i = 0; i<TCScousreOutline.length; i++){
@@ -181,12 +199,15 @@ function getLevelsFullDetails(cous){
       
         if (storeLastvalue %2 === 0){
            storeLastvalue = "2nd";
-        }
+          }
         else{
           storeLastvalue = "1st";
         }
-   
+      
+     // next time you open this file work on creating a div btw the margin box and img that would be would be used 
+     // to console the semeter
         detailsInfo =` 
+    
          
        <div class = "margin-box">
         <img src="${TCScousreOutline[i].lecturerImgUrl}" alt="" class="imageH">
@@ -205,6 +226,9 @@ function getLevelsFullDetails(cous){
     
     
         `;
+       
+        
+        
        getContainer2.innerHTML += detailsInfo;
        getContainer2.style.display = "block";
       }
@@ -213,5 +237,6 @@ function getLevelsFullDetails(cous){
   }
   
 }
+
 
 
