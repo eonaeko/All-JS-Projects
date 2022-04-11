@@ -143,7 +143,7 @@ function difffertialCalculation(calculateCode , exponent = 1){
          }
         }
         
-        if(calculateCode[1] === "0"){
+        if(calculateCode[1] === "o"){
             if(diifCalc === 1){
            displayMessage= `<img src= ${image}  alt="" class="close">
            <div class="center-div">${calculateCode} d${varNum}</div>
