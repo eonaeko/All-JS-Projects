@@ -4,7 +4,7 @@ const getToPlaceAfterClick = document.getElementById("to-place-after-click");
 const getToRemoveAfterClick = document.getElementById("to-remove-after-click");
 
 getToPlaceAfterClick. style.display = "none";
-let LogValue = "";
+let LogValue = null;
 
 getcalcButton.addEventListener("click" , function(evt){
     evt.preventDefault();
@@ -17,30 +17,43 @@ getcalcButton.addEventListener("click" , function(evt){
         num = i;
         firstslice =firstslice.split(" ")
         firstslice = firstslice.join("")
+        firstslice =firstslice.toLowerCase()
         secondSlice =secondSlice.split(" ")
         secondSlice = secondSlice.join("")
+        secondSlice = secondSlice.toLowerCase()
         firstslice = userInput.slice(0 ,i)
         secondSlice = userInput.slice(i+1,userInput.length)
-        difffertialCalculation(firstslice , secondSlice);
+       // console.log(firstslice , secondSlice)
+       difffertialCalculation(firstslice ,secondSlice);
+       getToRemoveAfterClick.style.display = "none"; 
      }
    }
-   if(userInput[num] !== "^") {
-       
+   if((userInput.length === 0) || userInput === " "){
+    getToRemoveAfterClick.style.display = "block"; 
+   }
+   else if(userInput[num] !== "^") {
         firstslice = userInput.slice()
         firstslice =firstslice.split(" ")
         firstslice = firstslice.join("")
+        firstslice=firstslice.toLowerCase()
         if(firstslice[0] === "l"){
             LogValue = firstslice;
         }
-        difffertialCalculation(firstslice);
+        // if((firstslice[0] === "s" || "c") ){
+        // difffertialCalculation(firstslice , secondSlice)
+        // }
+         difffertialCalculation(firstslice);
+         getToRemoveAfterClick.style.display = "none"; 
         }
-        getToRemoveAfterClick.style.display = "none"; 
+     
+        
     })
 
 
 
 
 function difffertialCalculation(calculateCode , exponent = 1){
+    console.log(calculateCode)
     getToPlaceAfterClick. style.display = "block";
     let storeValue =[];
     let varNum ="";
@@ -50,26 +63,28 @@ function difffertialCalculation(calculateCode , exponent = 1){
     if(Number.isNaN(num) === false){
         storeValue.push(num)
     }
+
     }//end of loop
 
     varNum = calculateCode[calculateCode.length -1]
-    let storeExpon =exponent;
+    let storeExpon = exponent;
     storeValue = Number(storeValue.join(""));
+    if(storeValue === 0){storeValue =1}
     let diifCalc = storeValue*exponent;
-    console.log(diifCalc)
     let displayMessage;
     exponent--;
     let check = Number(varNum);
-    console.log(check)
+
     const image = "IMG/download.png";
-    console.log(Number.isNaN(check))
+
 
     if(Number.isNaN(check) === false){
         displayMessage= `<img src= ${image} alt="" class="close">
         <div class="center-div">${calculateCode}dx</div>
         <div class="center-div">Results: <span>0</span></div>`
-    
     }
+    
+   
 
      // code for exponent calculation
     else if(calculateCode === "e"){
@@ -113,25 +128,58 @@ function difffertialCalculation(calculateCode , exponent = 1){
         <div class="center-div">Results: <span> 1/${LogValue[LogValue.length -1]}
         <span></div>`
     }
+    else if((calculateCode[0] === "s") || (calculateCode[0] ==="c")){
+        
+         if(calculateCode[1] === "i"){
+             if(diifCalc === 1){
+            displayMessage= `<img src= ${image}  alt="" class="close">
+            <div class="center-div">${calculateCode} d${varNum}</div>
+            <div class="center-div">Results: <span>cos${varNum}</span></div>`
+             }
+             else{
+            displayMessage= `<img src= ${image}  alt="" class="close">
+            <div class="center-div">${calculateCode} d${varNum}</div>
+            <div class="center-div">Results: <span>${diifCalc}cos${diifCalc}${varNum}</span></div>`
+         }
+        }
+        
+        if(calculateCode[1] === "0"){
+            if(diifCalc === 1){
+           displayMessage= `<img src= ${image}  alt="" class="close">
+           <div class="center-div">${calculateCode} d${varNum}</div>
+           <div class="center-div">Results: -<span>sin${varNum}</span></div>`
+            }
+            else{
+           displayMessage= `<img src= ${image}  alt="" class="close">
+           <div class="center-div">${calculateCode} d${varNum}</div>
+           <div class="center-div">Results: -<span>${diifCalc}sin${diifCalc}${varNum}</span></div>`
+        }
+       }
+    }//end of ...
 
     else if(storeExpon === 1){
         displayMessage= `<img src=${image} alt="" class="close">
         <div class="center-div">${calculateCode}<sup>${storeExpon}</sup> d${varNum}</div>
         <div class="center-div">Results: <span>${diifCalc}<span></div>`
     }
+    
     else if(storeExpon < 0){
         displayMessage= `<img src= ${image}  alt="" class="close">
         <div class="center-div">${calculateCode}<sup>${storeExpon}</sup> d${varNum}</div>
         <div class="center-div">Results:  1 /<span>${diifCalc}${varNum}<sup>${Math.abs(exponent)}</sup</span></div>`
     }
-  
-     else{
-        displayMessage= `<img src= ${image}  alt="" class="close">
-        <div class="center-div">${calculateCode}<sup>${storeExpon}</sup> d${varNum}</div>
-        <div class="center-div">Results: <span>${diifCalc}${varNum}<sup>${exponent}</sup</span></div>`
-     }
 
 
+    else{
+           displayMessage= `<img src= ${image}  alt="" class="close">
+           <div class="center-div">${calculateCode}<sup>${storeExpon}</sup> d${varNum}</div>
+           <div class="center-div">Results: <span>${diifCalc}${varNum}<sup>${exponent}</sup</span></div>`
+        }
+    if(displayMessage === undefined){
+        displayMessage =`
+        <img src= ${image}  alt="" class="close">
+        <div class="center-div">implentations is yet to cater for this</div>`
+    }
   
     getToPlaceAfterClick.innerHTML = displayMessage;
     const getRemove = document.querySelector(".close");
