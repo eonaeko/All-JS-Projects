@@ -1,0 +1,51 @@
+body{
+
+    margin: 0;
+    padding: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.nav-bar{
+    background-color: #fafafa;
+    height: 50px;
+}
+.nav-element{
+    font-size: 16px;
+    padding: 1em ;
+    font-weight:900;
+}
+.main-para{
+
+    width: 50%;
+    height: 300px;
+    /* position: absolute; */
+    margin: 2em auto;
+    margin-top: 3em;
+    /* top: 50%;
+    bottom: 50%;
+    right: 500px;
+    right: 50%; */
+    padding: 1em;
+}
+.main-para .gene{
+     text-align: center;
+     font-size: 24px;
+}
+.color-back{
+    box-sizing: border-box;
+    position: relative;
+    background-color: #000;
+    color: #fff;
+    height: 200px;
+    padding: 2em;
+    padding-top: 5em;
+    padding-left: 4em;
+    margin: 1em;
+}
+button{
+    display: block;
+    width: 150px;
+    height: 35px;
+    margin: 0 auto;
+    border: none;
+    font-size: 12px;
+}

@@ -39,13 +39,18 @@ span{
 /* #container2{
 
 } */
-#container2 .margin-box{
+#container2 .margin-box , #container3 .margin-box{
     display: flex;
     width: 50%;
     margin: 0 auto;
     margin-bottom: 1em;
     border-radius: 10px;
     box-shadow: 0 4px 4px rgba(0, 0, 0, .25) , 0 4px 4px rgba(0, 0, 0, .25);
+}
+.even , .odd{
+    margin: 1em;
+    font-size: 20px;
+    font-weight: 900;
 }
 .error-red{
     color: rgb(255, 90, 0);
@@ -109,9 +114,13 @@ span{
     padding: 1em;
     
 }
-#container2 .margin-box{
+#container2 .margin-box  , #container3 .margin-box{
     width: 100%;
     display: block;
+}
+.even , .odd{
+    font-size: 18px;
+    
 }
 
 }

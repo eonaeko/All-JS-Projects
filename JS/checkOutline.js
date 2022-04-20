@@ -4,8 +4,6 @@
  * department and prints the courecode , title , lecturer and a link to it past question
  * this program can be improve upon and be used in the NATECSS website 
  */
-/* <img src="img/emman.jpg" alt="">
-<img src="img/joe.jpg" alt=""></img> */
 // array of objects named TCScourseOutline 
 let TCScousreOutline = [
   {
@@ -88,11 +86,13 @@ const getInput = document.getElementById("input-form");
 const getButton = document.getElementById('check');
 const getContainer = document.getElementById("container")
 const getContainer2 = document.getElementById("container2");
-const getLevelMessage = document.getElementById("level-message");
+const getContainer3 = document.getElementById("container3")
+const getLevelMessage = document.querySelectorAll(".level-message");
+const getEven = document.querySelector(".even")
+const getODD = document.querySelector(".odd")
 
 getButton.addEventListener("click",
 function(){
-  //console.log(TCScousreOutline[0].courseCode[3])
   let course_Code = getInput.value;
   /*
    * the split function and join function caters for the fact that there can be space in user input which 
@@ -124,6 +124,7 @@ function getCourseDetails(course_Code){
   let num ;
   let detailsInfo;
   getContainer2.innerHTML =" "; //emptys the other function container in Html
+  getContainer3.innerHTML =" "
   for(let i = 0; i<TCScousreOutline.length; i++){
     storeLastvalue = course_Code.charAt(course_Code.length-1);
     storeLastvalue = Number(storeLastvalue);
@@ -180,6 +181,7 @@ which is given to perform certain analysis in the code
 function getLevelsFullDetails(cous){
   let storeLastvalue;
   getContainer.innerHTML = " ";// emptys the other function container
+
   TCScousreOutline.sort( function(a,b){
     if(a.courseCode[a.courseCode.length-1] % 2 === 0){
       return 1;
@@ -190,52 +192,65 @@ function getLevelsFullDetails(cous){
   return 0
   
 })// used to sort the array 
-  let detailsInfo;
 
-  for(let i = 0; i<TCScousreOutline.length; i++){
-    storeLastvalue =TCScousreOutline[i].courseCode.charAt(TCScousreOutline[0].courseCode.length-1);
-    storeLastvalue = Number(storeLastvalue);
-    if(cous == TCScousreOutline[i].courseCode[3]){
-      
-        if (storeLastvalue %2 === 0){
-           storeLastvalue = "2nd";
+let evenArray =TCScousreOutline.filter((a) =>{ return a.courseCode[a.courseCode.length-1] %2 === 0})
+let oddArray = TCScousreOutline.filter(a => {return a.courseCode[a.courseCode.length - 1] %2 !==0})
+
+
+
+  function  printOutDetails(array , container){
+  
+    let detailsInfo;
+    for(let i = 0; i<array.length; i++){
+      storeLastvalue = array[i].courseCode.charAt(array[0].courseCode.length-1);
+      storeLastvalue = Number(storeLastvalue);
+      if(cous == array[i].courseCode[3]){
+          if (storeLastvalue %2 === 0){
+             storeLastvalue = "2nd";
+             getEven.innerHTML = `The following are offered in ${storeLastvalue} semeter` ;
+            
+            }
+          else{
+            storeLastvalue = "1st";
+            getODD.innerHTML= `The following are offered in ${storeLastvalue} semeter`;
+            
+            //getLevelMessage.forEach(message =>{console.log(message.innerHTML= storeLastvalue)})
           }
-        else{
-          storeLastvalue = "1st";
-        }
-      
-     // next time you open this file work on creating a div btw the margin box and img that would be would be used 
-     // to console the semeter
-        detailsInfo =` 
-    
+
          
-       <div class = "margin-box">
-        <img src="${TCScousreOutline[i].lecturerImgUrl}" alt="" class="imageH">
-        <div>
-        <div class="details-info">
-            <h1 class="contained-h1">Name: ${TCScousreOutline[i].courseLeturter}</h1>
-         <div>
-                <span class="bolder-span">Course taught:</span><span> ${TCScousreOutline[i].courseCode}</span></span><br>
-                <span class="bolder-span">Course Title:</span><span> ${TCScousreOutline[i].courseTitle}</span><br>
-                <span class="bolder-span">Semeter:</span> ${storeLastvalue}</span><br>
-                <span class="link-span"><a href="${TCScousreOutline[i].coursePastQURL}">Get materials and past questions</a></span>
-         </div>
-        </div>
-        </div>
-        </div>
-    
-    
-        `;
+       // next time you open this file work on creating a div btw the margin box and img that would be would be used 
+       // to console the semeter
+          detailsInfo =` 
+         <div class = "margin-box">
+          <img src="${array[i].lecturerImgUrl}" alt="" class="imageH">
+          <div>
+          <div class="details-info">
+              <h1 class="contained-h1">Name: ${array[i].courseLeturter}</h1>
+           <div>
+                  <span class="bolder-span">Course taught:</span><span> ${array[i].courseCode}</span></span><br>
+                  <span class="bolder-span">Course Title:</span><span> ${array[i].courseTitle}</span><br>
+                  <span class="bolder-span">Semeter:</span> ${storeLastvalue}</span><br>
+                  <span class="link-span"><a href="${array[i].coursePastQURL}">Get materials and past questions</a></span>
+           </div>
+          </div>
+          </div>
+          </div>
+      
+      
+          `;
+         
        
-        
-        
-       getContainer2.innerHTML += detailsInfo;
-       getContainer2.style.display = "block";
-      }
-     
-    
+         
+         container.innerHTML += detailsInfo;
+         container.style.display = "block";
+        }
+       
   }
   
+  
+}
+printOutDetails(oddArray , getContainer2)
+printOutDetails(evenArray , getContainer3)
 }
 
 

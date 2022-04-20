@@ -2,15 +2,26 @@ const getInputExpression = document.getElementById("input-Expression");
 const getcalcButton = document.getElementById("calcButton");
 const getToPlaceAfterClick = document.getElementById("to-place-after-click");
 const getToRemoveAfterClick = document.getElementById("to-remove-after-click");
+const getCarat = document.querySelectorAll("span")
 
 getToPlaceAfterClick. style.display = "none";
 let LogValue = null;
+
+
+getCarat.forEach(e =>{
+    e.addEventListener("click" , function(){
+        let userInput = getInputExpression.value;
+        userInput =userInput+"^"
+        getInputExpression.value = userInput
+    })
+})
 
 getcalcButton.addEventListener("click" , function(evt){
     evt.preventDefault();
     let userInput = getInputExpression.value;
     let firstslice= "";
     let secondSlice = "";
+
     let num ;
     for(let i = 0; i < userInput.length; i++){
      if(userInput[i] ==="^"){
@@ -23,7 +34,6 @@ getcalcButton.addEventListener("click" , function(evt){
         secondSlice = secondSlice.toLowerCase()
         firstslice = userInput.slice(0 ,i)
         secondSlice = userInput.slice(i+1,userInput.length)
-       // console.log(firstslice , secondSlice)
        difffertialCalculation(firstslice ,secondSlice);
        getToRemoveAfterClick.style.display = "none"; 
      }
@@ -53,7 +63,6 @@ getcalcButton.addEventListener("click" , function(evt){
 
 
 function difffertialCalculation(calculateCode , exponent = 1){
-    console.log(calculateCode)
     getToPlaceAfterClick. style.display = "block";
     let storeValue =[];
     let varNum ="";
@@ -128,33 +137,74 @@ function difffertialCalculation(calculateCode , exponent = 1){
         <div class="center-div">Results: <span> 1/${LogValue[LogValue.length -1]}
         <span></div>`
     }
-    else if((calculateCode[0] === "s") || (calculateCode[0] ==="c")){
-        
-         if(calculateCode[1] === "i"){
-             if(diifCalc === 1){
-            displayMessage= `<img src= ${image}  alt="" class="close">
-            <div class="center-div">${calculateCode} d${varNum}</div>
-            <div class="center-div">Results: <span>cos${varNum}</span></div>`
-             }
-             else{
-            displayMessage= `<img src= ${image}  alt="" class="close">
-            <div class="center-div">${calculateCode} d${varNum}</div>
-            <div class="center-div">Results: <span>${diifCalc}cos${diifCalc}${varNum}</span></div>`
-         }
-        }
-        
-        if(calculateCode[1] === "o"){
-            if(diifCalc === 1){
-           displayMessage= `<img src= ${image}  alt="" class="close">
-           <div class="center-div">${calculateCode} d${varNum}</div>
-           <div class="center-div">Results: -<span>sin${varNum}</span></div>`
+    else if((calculateCode[0] === "s") || (calculateCode[0] ==="c") || calculateCode[0] ==="t"){
+        if(calculateCode[0] === "s"){
+            if(calculateCode.includes("in")){
+                if(diifCalc === 1){
+               displayMessage= `<img src= ${image}  alt="" class="close">
+               <div class="center-div">${calculateCode} d${varNum}</div>
+               <div class="center-div">Results: <span>cos${varNum}</span></div>`
+                }
+                else{
+               displayMessage= `<img src= ${image}  alt="" class="close">
+               <div class="center-div">${calculateCode} d${varNum}</div>
+               <div class="center-div">Results: <span>${diifCalc}cos${diifCalc}${varNum}</span></div>`
             }
-            else{
-           displayMessage= `<img src= ${image}  alt="" class="close">
-           <div class="center-div">${calculateCode} d${varNum}</div>
-           <div class="center-div">Results: -<span>${diifCalc}sin${diifCalc}${varNum}</span></div>`
         }
-       }
+        if(calculateCode.includes("ec")){
+            if(diifCalc === 1){
+                displayMessage= `<img src= ${image}  alt="" class="close">
+                <div class="center-div">${calculateCode} d${varNum}</div>
+                <div class="center-div">Results: <span>sec(${varNum})tan(${varNum})</span></div>`
+                 }
+        }
+        }
+
+        if(calculateCode[0] === "c"){
+            if(calculateCode.includes("os")){
+                if(diifCalc === 1){
+               displayMessage= `<img src= ${image}  alt="" class="close">
+               <div class="center-div">${calculateCode} d${varNum}</div>
+               <div class="center-div">Results: -<span>sin${varNum}</span></div>`
+                }
+                else{
+               displayMessage= `<img src= ${image}  alt="" class="close">
+               <div class="center-div">${calculateCode} d${varNum}</div>
+               <div class="center-div">Results: -<span>${diifCalc}sin${diifCalc}${varNum}</span></div>`
+            }
+           }
+           if((calculateCode.includes("os")) && (calculateCode[calculateCode.length -2] =="c")){
+               calculateCode ="cosec"
+            if(diifCalc === 1){
+                displayMessage= `<img src= ${image}  alt="" class="close">
+                <div class="center-div">${calculateCode} (${varNum}) d${varNum}</div>
+                <div class="center-div">Results: -<span>cot(${varNum})cosec(${varNum})</span></div>`
+                 }
+           }
+           if(calculateCode.includes("ot")){
+            if(diifCalc === 1){
+                displayMessage= `<img src= ${image}  alt="" class="close">
+                <div class="center-div">${calculateCode}(${varNum}) d${varNum}</div>
+                <div class="center-div">Results: -<span>cot(${varNum})cosec(${varNum})</span></div>`
+                 }
+           }
+          
+    
+        }
+        
+       
+       if(calculateCode.includes("an")){
+        if(diifCalc === 1){
+       displayMessage= `<img src= ${image}  alt="" class="close">
+       <div class="center-div">${calculateCode} d${varNum}</div>
+       <div class="center-div">Results: <span>sec<sup>2</sup>${varNum}</span></div>`
+        }
+    //     else{
+    //    displayMessage= `<img src= ${image}  alt="" class="close">
+    //    <div class="center-div">${calculateCode} d${varNum}</div>
+    //    <div class="center-div">Results: <span>${diifCalc}cos${diifCalc}${varNum}</span></div>`
+    // }
+   }
     }//end of ...
 
     else if(storeExpon === 1){
@@ -170,7 +220,7 @@ function difffertialCalculation(calculateCode , exponent = 1){
     }
 
 
-    else{
+    else if(storeExpon > 1){
            displayMessage= `<img src= ${image}  alt="" class="close">
            <div class="center-div">${calculateCode}<sup>${storeExpon}</sup> d${varNum}</div>
            <div class="center-div">Results: <span>${diifCalc}${varNum}<sup>${exponent}</sup</span></div>`
