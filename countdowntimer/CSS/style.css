@@ -1,0 +1,50 @@
+body{
+    background-image: url(../IMG/pexels-lilartsy-1793037.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+   background-position: 100%;
+   box-sizing: border-box;
+   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+   color: #fff;
+}
+.h2{
+    text-align: center;
+    display: block;
+    margin-top: 10rem;
+    
+
+}
+
+.contained{
+    display: flex;
+    color: #fff;
+    align-items: center;
+    justify-content: center;
+    margin: 5rem auto;
+    margin-top: 0;
+   
+}
+
+.contained > div span{
+    display: block;
+    margin: 1em auto;
+    margin-left: 2em;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 900;
+    
+}
+.day , .hrs, .mins ,.sec , .your{
+    margin-left: 2rem;
+    font-size: 6rem;
+}
+@media(max-width:800px){
+    body{
+        height: 100vh;
+        overflow: hidden;
+    }
+    .day , .hrs, .mins ,.sec , .your{
+        margin-left: 2rem;
+        font-size: 4rem;
+    }
+}

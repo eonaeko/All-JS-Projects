@@ -1,5 +1,4 @@
 body{
-
     margin: 0;
     padding: 0;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -32,7 +31,7 @@ body{
 }
 .color-back{
     box-sizing: border-box;
-    position: relative;
+    /* position: relative; */
     background-color: #000;
     color: #fff;
     height: 200px;
@@ -48,4 +47,16 @@ button{
     margin: 0 auto;
     border: none;
     font-size: 12px;
+}
+
+
+@media(max-width:900px){
+    .main-para{
+        width: 100%;
+        box-sizing: border-box;
+    }
+    .color-back{
+        margin: 1em auto;
+        /* width: 75%; */
+    }
 }

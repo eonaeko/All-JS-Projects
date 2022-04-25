@@ -4,14 +4,17 @@ const getToPlaceAfterClick = document.getElementById("to-place-after-click");
 const getToRemoveAfterClick = document.getElementById("to-remove-after-click");
 const getCarat = document.querySelectorAll("span")
 
+
 getToPlaceAfterClick. style.display = "none";
 let LogValue = null;
 
 
 getCarat.forEach(e =>{
+    console.log(e.innerHTML)
     e.addEventListener("click" , function(){
         let userInput = getInputExpression.value;
-        userInput =userInput+"^"
+       // userInput =userInput+"^"
+     userInput = userInput + e.innerHTML
         getInputExpression.value = userInput
     })
 })
