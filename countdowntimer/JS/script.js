@@ -1,5 +1,5 @@
 (count =function(){
-    const Bday = "30 Apr 2022";
+    const Bday = "11 June 2022";
     const getCOntained =document.querySelector(".contained")
     const h2 =document.querySelector("h2")
     const Countdown = new Date(Bday)
@@ -27,11 +27,7 @@
     minsEL.innerHTML =0
     secEl.innerHTML = 0
     }
-    if ((days <0)&&(hrs<0) &&(mins <0) &&(seconds <0)){
-        h2.innerHTML = "<h2>It is your day!! ENJOY THE DAY</h2>"
-        getCOntained.innerHTML = "<h1 class ='your'>HAPPY BIRTHDAY EMMANUEL</h1>"
-        
-    }
+    
 
   })();
   setInterval( count , 1000)

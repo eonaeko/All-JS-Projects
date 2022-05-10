@@ -1,9 +1,8 @@
 body{
-    background-image: url(../IMG/pexels-lilartsy-1793037.jpg);
+    background-image: url(../IMG/IMG-20220503-WA0001.jpg);
     background-repeat: no-repeat;
-    background-size: cover;
-   background-position: 100%;
-   box-sizing: border-box;
+    background-size: 100vw 100%;
+    box-sizing: border-box;
    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
    color: #fff;
 }
@@ -21,7 +20,7 @@ body{
     align-items: center;
     justify-content: center;
     margin: 5rem auto;
-    margin-top: 0;
+   
    
 }
 
@@ -36,7 +35,7 @@ body{
 }
 .day , .hrs, .mins ,.sec , .your{
     margin-left: 2rem;
-    font-size: 6rem;
+    font-size: 6rem; margin-top: 10rem;
 }
 @media(max-width:800px){
     body{

@@ -181,6 +181,8 @@ which is given to perform certain analysis in the code
 function getLevelsFullDetails(cous){
   let storeLastvalue;
   getContainer.innerHTML = " ";// emptys the other function container
+  getContainer2.innerHTML =" "
+  getContainer3.innerHTML = " "
 
   TCScousreOutline.sort( function(a,b){
     if(a.courseCode[a.courseCode.length-1] % 2 === 0){
@@ -193,7 +195,7 @@ function getLevelsFullDetails(cous){
   
 })// used to sort the array 
 
-let evenArray =TCScousreOutline.filter((a) =>{ return a.courseCode[a.courseCode.length-1] %2 === 0})
+let evenArray =TCScousreOutline.filter(a =>{return a.courseCode[a.courseCode.length-1] %2 === 0})
 let oddArray = TCScousreOutline.filter(a => {return a.courseCode[a.courseCode.length - 1] %2 !==0})
 
 
@@ -201,7 +203,7 @@ let oddArray = TCScousreOutline.filter(a => {return a.courseCode[a.courseCode.le
   function  printOutDetails(array , container){
   
     let detailsInfo;
-    for(let i = 0; i<array.length; i++){
+    for(let i = 0; i < array.length; i++){
       storeLastvalue = array[i].courseCode.charAt(array[0].courseCode.length-1);
       storeLastvalue = Number(storeLastvalue);
       if(cous == array[i].courseCode[3]){
