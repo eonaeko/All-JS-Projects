@@ -17,10 +17,7 @@ getCarat.forEach(e =>{
 })
 
 //This caters for that the user may use the Enter key on his/her keyboard instead the Differentite button
-//window.addEventListener('keydown' , e =>{if(e.code ===   'Enter'){ EventHandler()}})
-window.addEventListener("keydown" , e => {alert(e.which)
-     alert("The code is " + e.code)}
-)
+window.addEventListener('keydown' , e =>{if((e.code ==='Enter') || e.which === 13){ EventHandler()}})
 //This caters the implementation that would happen when the differentiate button is clicked on 
 getcalcButton.addEventListener("click" , EventHandler)
 
