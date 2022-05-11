@@ -16,9 +16,13 @@ getCarat.forEach(e =>{
     })
 })
 
+//This caters for that the user may use the Enter key on his/her keyboard instead the Differentite button
+window.addEventListener('keydown' , e =>{if(e.code ===   'Enter'){ EventHandler()}})
 //This caters the implementation that would happen when the differentiate button is clicked on 
-getcalcButton.addEventListener("click" , function(evt){
-    evt.preventDefault();
+getcalcButton.addEventListener("click" , EventHandler)
+
+// A function that would be run with respect to an event happening
+function EventHandler(){
     let userInput = getInputExpression.value;
     let firstslice= "";
     let secondSlice = "";
@@ -50,8 +54,8 @@ getcalcButton.addEventListener("click" , function(evt){
          difffertialCalculation(firstslice);
          getToRemoveAfterClick.style.display = "none"; 
         }
-    })
-
+}
+// end of EventHandler 
 
 
 // A function that performs the differentiation 
