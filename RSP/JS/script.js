@@ -23,8 +23,8 @@ getButton.forEach((evt) => {evt.addEventListener("click", e =>{
         userChioce = e.target.id;
         computerTrueChoice()
         decideWinner()
-        if((userScore > 10) || computerScore > 10){
-            decideAfteraRound()
+        if((userScore === 10) || computerScore === 10){
+            setTimeout(decideAfteraRound , 1000)
         }
         
     })
@@ -107,10 +107,11 @@ function decideAfteraRound(){
         getRSPContainer.style.display = "block"
         getWinnerAfterRound.style.display ="none";
         localStorage.clear()
-       // getComputerScore.innerHTML = comScore;
-       // getUserScore.innerHTML =  UScore;
+       getComputerScore.innerHTML = comScore;
+       getUserScore.innerHTML =  UScore;
         computerScore = 0
         userScore=0;
+
         winnerPara.textContent = "";
 
     })

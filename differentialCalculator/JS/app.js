@@ -241,6 +241,7 @@ function difffertialCalculation(calculateCode , exponent = 1){
 
 // A simple function that is responsible for manipulating the user input 
 function InputManipulation(value){
+       
        value = value.split(" ")
        value = value.join("")
        value = value.toLowerCase()

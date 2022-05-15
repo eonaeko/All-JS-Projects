@@ -203,7 +203,7 @@ let oddArray = TCScousreOutline.filter(a => {return a.courseCode[a.courseCode.le
   function  printOutDetails(array , container){
   
     let detailsInfo;
-    for(let i = 0; i < array.length; i++){
+    for(let i = 0; i <  array.length; i++){
       storeLastvalue = array[i].courseCode.charAt(array[0].courseCode.length-1);
       storeLastvalue = Number(storeLastvalue);
       if(cous == array[i].courseCode[3]){
