@@ -123,7 +123,7 @@ function popIn(value ,color){
             popperPara.innerHTML = ""
             popper.appendChild(popperPara)
             popper.className = ""
-    } ,1500)
+    } ,2000)
 }
 
 
