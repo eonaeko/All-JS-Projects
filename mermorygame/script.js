@@ -78,7 +78,7 @@ function filp(){
    this.setAttribute("src" , cardArray[cardID].img)
    cardChosen.push(cardArray[cardID].name)
    cardIDArray.push(cardID)
-   setTimeout(checkIfThereisAMatch, 400)
+   setTimeout(checkIfThereisAMatch, 500)
 }
 // This function is used to check if there is a match with the cards picked or not
 function checkIfThereisAMatch(){
