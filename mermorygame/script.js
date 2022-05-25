@@ -113,19 +113,15 @@ function checkIfThereisAMatch(){
 
 // This function created the pop in alert when there is a match or not
 function popIn(value ,color){
-    const popper = document.getElementById("popper")
+    const popper = document.createElement("div")
     const popperPara = document.createElement("p")
+    popper.setAttribute('id' , 'popper')
     popperPara.innerHTML = value
     popperPara.style.color = color
     popper.appendChild(popperPara)
     popper.className = "popper2"
-    setTimeout(()=>{
-            popperPara.innerHTML = ""
-            popper.appendChild(popperPara)
-            popper.className = ""
-    } ,2000)
+    document.body.appendChild(popper)
+    setTimeout(()=>{ document.body.removeChild(popper)} ,2000)
 }
+//Credit to using Ania Kubow 
 
-
-
-//Credit to using Ania Kubow images and grabbing ideas from her code on the freecodecamp
