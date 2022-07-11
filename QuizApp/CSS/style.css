@@ -1,0 +1,117 @@
+body{
+    margin: 0;
+    padding: 0;
+    
+    background-color: rgba(28, 126, 214 ,.3);
+    box-sizing: border-box;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+i{
+    margin: 0 5px;
+}
+
+ #start-button{
+     display: block;
+     width: 300px;
+     height: 80px;
+     border: none;
+     background-color: #59A307;
+     margin:  15rem auto;
+     font-size: 24px;
+     color: #fff;
+     border-radius: 10px;
+ }
+
+.quiz-container{
+    display: none;
+    margin:  10rem auto;
+    border-radius: 10px;
+    width: 500px;
+    background-color: #fff ;
+    color: black;
+    position: relative;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, .5) , 0 4px 4px rgba(0, 0, 0, .5) 
+}
+.quiz-container .progress-bar{
+    border-top-left-radius: 10px;
+    /* border-top-right-radius: 10px; */
+    height: 30px;
+    background-color:#59A307 ; 
+}
+
+.question-answered{
+    width: 100px;
+    height: 28px;
+    border: .1px dashed black;
+    font-size: 11px;
+    font-weight: 900;
+    margin-top: 5px;
+    padding: 10px 0 10px 10px;
+    border-radius: 10px;
+    position: absolute;
+    right: 10px;
+}
+.question-answered span{
+    font-size: 16px;
+}
+.questions-holder{
+    padding: 2rem;
+    margin-left:-.8rem ;
+}
+.questions-holder ul li{
+    list-style-type: none;
+    margin-bottom: 1rem; 
+    margin-left: -1.8rem;
+}
+.questions-holder ul li {
+    border: 1px solid black;
+    border-radius: 20px;
+    padding: .5rem;
+}
+.questions-holder ul li input{
+     margin: 5px; 
+}
+.questions-holder ul li label{ 
+    padding: .3rem;
+}
+/* we would either id or class and get it implemented by JS */
+.correct {
+    /* background-color: #59A307; */
+    border: 2px solid #59A307;
+    color:#59A307
+}
+.incorrect{
+    border: red;
+}
+.quiz-controls{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color:#59A307 ;
+    padding: 1rem;
+}
+.quiz-controls button{
+    width: 100px;
+    height: 35px;
+    border: none;
+    background-color:rgb(232, 238, 194) ;
+    color: black;
+    font-weight: 900;
+    cursor: pointer;
+}
+
+
+
+@media (max-width:600px) {
+    .quiz-container{
+        width: 300px;
+        margin: 2rem auto;
+    }
+    .questions-holder ul li{
+        border: .2px solid grey;
+    }
+    /* .questions-holder ul li label{
+    border:none;
+    } */
+   
+}
