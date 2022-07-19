@@ -1,7 +1,10 @@
 body{
     margin: 0;
     padding: 0;
-    
+    /* width: 100vw; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background-color: rgba(28, 126, 214 ,.3);
     box-sizing: border-box;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
@@ -24,7 +27,7 @@ i{
 
 .quiz-container{
     display: none;
-    margin:  10rem auto;
+     margin:  9rem auto; 
     border-radius: 10px;
     width: 500px;
     background-color: #fff ;
@@ -75,13 +78,20 @@ i{
     padding: .3rem;
 }
 /* we would either id or class and get it implemented by JS */
-.correct {
+#correct {
     /* background-color: #59A307; */
     border: 2px solid #59A307;
-    color:#59A307
+    color:#59A307;
 }
-.incorrect{
-    border: red;
+#correct input{
+    accent-color: #59A307;
+}
+#incorrect{
+    border: 2px solid red;
+    color: red;
+}
+#incorrect input{
+    accent-color: red;
 }
 .quiz-controls{
     display: flex;
@@ -98,6 +108,27 @@ i{
     color: black;
     font-weight: 900;
     cursor: pointer;
+}
+
+
+#score-result{
+    display: block;
+    /* width: 300px;  */
+     margin:  10rem 1em; 
+    font-size: 250%;
+    text-align: center;
+    color: rgb(89, 163, 7);
+    
+}
+#score-result button {
+     display: block;
+     width: 300px;
+     height: 80px;
+     border: none;
+     font-size: 24px;
+     border-radius: 10px;
+     margin:0 auto;
+     margin: 1rem auto;
 }
 
 
