@@ -41,7 +41,7 @@ const questionsArray = [{
 }
 ,
 {
-    question : 'Who won APC presidential primary',
+    question : 'Who won APC presidential primary?',
      options :{
          a: 'Professor Yemi Osinbajo',
          b:'Bola Ahmed Tinubu',
@@ -80,7 +80,7 @@ const questionsArray = [{
 }
 ,
 {
-question : 'What is the full meaning of Unilag',
+question : 'What is the full meaning of Unilag?',
      options :{
          a: 'University of lagoon',
          b:'University of Kaduna',
@@ -132,7 +132,7 @@ question : 'What is the full meaning of Unilag',
 }
 ,
 {
-    question : 'Which year did Buhari won elections',
+    question : 'Which year did Buhari won elections?',
     options :{
         a: '2015',
         b:'2007',
@@ -144,7 +144,7 @@ question : 'What is the full meaning of Unilag',
     picked:false
 }
 ,{
-    question : 'Is Nigeria a landlocked country',
+    question : 'Is Nigeria a landlocked country?',
      options :{
          a: 'Yes',
          b:'No',
@@ -157,7 +157,7 @@ question : 'What is the full meaning of Unilag',
 }
 ,
 {
-    question : 'Is Niger a landlocked country',
+    question : 'Is Niger a landlocked country?',
     options :{
         a: 'Yes',
         b:'No',
@@ -169,7 +169,7 @@ question : 'What is the full meaning of Unilag',
     picked:false
 }
 ,{
-    question : 'who sang Buga',
+    question : 'Who sang Buga?',
     options :{
         a: 'KizzDainel',
         b:'Wizkid',
@@ -181,7 +181,7 @@ question : 'What is the full meaning of Unilag',
     picked:false
 }
 ,{
-    question : 'who is the richest man in Nigeria',
+    question : 'Who is the richest man in Nigeria?',
     options :{
         a: 'Alkio Dangote',
         b:'Mike Adenuga',
@@ -193,7 +193,7 @@ question : 'What is the full meaning of Unilag',
     picked:false
 },
 {
-    question : 'Who is the General Overseer of RCCG',
+    question : 'Who is the General Overseer of RCCG?',
     options :{
         a: 'Bishop David Oyedepo',
         b:'Apostle Joshua Selman',
@@ -205,7 +205,7 @@ question : 'What is the full meaning of Unilag',
     picked:false
 },
 {
-    question : 'Who is the General Overseer of Deeper Life',
+    question : 'Who is the General Overseer of Deeper Life?',
     options :{
         a: 'Bishop David Oyedepo',
         b:'Apostle Joshua Selman',
@@ -217,7 +217,7 @@ question : 'What is the full meaning of Unilag',
     picked:false
 },
 {
-    question : 'Who is the General Overseer of Living Faith Chruch',
+    question : 'Who is the General Overseer of Living Faith Chruch?',
     options :{
         a: 'Bishop David Oyedepo',
         b:'Apostle Joshua Selman',
@@ -229,7 +229,7 @@ question : 'What is the full meaning of Unilag',
     picked:false
 },
 {
-    question : 'Who owns Ruff n rubmle',
+    question : 'Who founded Ruff n rubmle?',
     options :{
         a: 'Adenike Ogunlesi',
         b:'Bolaji Balogun',
@@ -241,7 +241,7 @@ question : 'What is the full meaning of Unilag',
     picked:false
 },
 {
-    question : 'Who is the network opeartor in Nigeria',
+    question : 'Which Network Operator(s) is/are found in Nigeria?',
     options :{
         a: 'MTN',
         b:'Aritel',
@@ -253,7 +253,7 @@ question : 'What is the full meaning of Unilag',
     picked:false
 },
 {
-    question : 'When was the deparment "Telecommunication science" created in Unilorin',
+    question : 'When was the deparment "Telecommunication science" created in Unilorin?',
     options :{
         a: '2009',
         b:'1019',
@@ -265,7 +265,7 @@ question : 'What is the full meaning of Unilag',
     picked:false
 },
 {
-    question : 'When was Unilorin established',
+    question : 'When was Unilorin established?',
     options :{
         a: '2009',
         b:'1995',
@@ -277,7 +277,7 @@ question : 'What is the full meaning of Unilag',
     picked:false 
 }
 ,{
-    question : 'When was UniMaid established',
+    question : 'When was UniMaid established?',
     options :{
         a: '2009',
         b:'1995',
@@ -289,7 +289,7 @@ question : 'What is the full meaning of Unilag',
     picked:false 
 }
 ,{
-    question : 'Which car brand developed car in  Nigeria',
+    question : 'Which car brand is developed in  Nigeria?',
     options :{
         a: 'Toyota',
         b:'Accura',
@@ -301,7 +301,7 @@ question : 'What is the full meaning of Unilag',
     picked:false 
 }
 ,{
-    question : 'Who is the richest man in the world',
+    question : 'Who is the richest man in the world?',
     options :{
         a: 'Elon Musk',
         b:'Steve Jobs',
@@ -313,7 +313,7 @@ question : 'What is the full meaning of Unilag',
     picked:false 
 }
 ,{
-    question : 'Who is founder of Design IT Africa',
+    question : 'Who is founder of Design IT Africa?',
     options :{
         a: 'Alli Ajagbe',
         b:'Ademola Thompson',
@@ -325,7 +325,7 @@ question : 'What is the full meaning of Unilag',
     picked:false 
 }
 ,{
-    question : 'When was KWASU established',
+    question : 'When was KWASU established?',
     options :{
         a: '2009',
         b:'1995',
@@ -337,7 +337,7 @@ question : 'What is the full meaning of Unilag',
     picked:false 
 }
 ,{
-    question : 'Who authored become a better you',
+    question : 'Who authored Become a Better You?',
     options :{
         a: 'Mercy Jacobs',
         b:'Joel Osteen',
@@ -349,7 +349,7 @@ question : 'What is the full meaning of Unilag',
     picked:false 
 }
 ,{
-    question : 'When authored Eloquent JavaScript',
+    question : 'When authored Eloquent JavaScript?',
     options :{
         a: 'Marijn Haverbeke',
         b:'Garibel Binuyo',
@@ -361,7 +361,7 @@ question : 'What is the full meaning of Unilag',
     picked:false 
 },
 {
-    question : 'When was CIS established in Unilorin',
+    question : 'When was CIS established in Unilorin?',
     options :{
         a: '2009',
         b:'1995',
@@ -425,6 +425,7 @@ reviewButton.innerHTML = 'Review'
 nextLevelButton.className ='next-level'
 nextLevelButton.innerHTML = 'Next Level'
 restartButton.innerHTML = 'Restart'
+restartButton.className= "restart"
 /**the Submit button is responsible for validating the answer chosen by the user a
  * and also for providing different button for click by the user to provide them with certain functionality like restarting , reviewing the answered question
  * going to a new level, replaying a certain level again based on score the user has
@@ -555,6 +556,7 @@ function verifyAndCheck(){
 }
 // This function is called when the user clicks on the start button and it responsible for the event on it click
 function startButtonEventHandler(e){
+
     startButton.style.display= "none"
     quizContainer.style.display = 'block'
     progressBar.style.width ="0px"
@@ -621,6 +623,7 @@ function toSetQuestions(array){for(let i  =0 ; i < randonIndex.length; i++){arra
 // this function is responsible for getting the question to display on the screen 
 function questionLoader(num , array){
    const questionHolder = document.querySelector('.questions-holder')
+
     const questionPrototype = `
     <h2>${array[num].question}</h2>
     <ul>
@@ -784,8 +787,6 @@ function nextButtonEventHandler(){
 }
 
 function submitButtonEventListener(){
-    localStorage.setItem('level' , JSON.stringify(level))
-    console.log(localStorage)
     document.body.removeChild(quizContainer)
     for(let i  = 0 ; i < storeAnswers.length; i++){
         if(storeAnswers[i].answerid.length === 1){ if(chosenQuestions[storeAnswers[i].currentQuestionIndex].answer === storeAnswers[i].answerid){ score++ }}
@@ -794,6 +795,7 @@ function submitButtonEventListener(){
      scoreDiv.innerHTML =`<h2>You scored ${score}/${chosenQuestions.length}</h2>`
      // if the user has a score lesser than 7 , the replay and review button would be available to them
      if(score < 7){
+        scoreDiv.style.color = "rgb(255 , 0 , 0)"
        scoreDiv.appendChild(replayButton)
        scoreDiv.appendChild(reviewButton)
        document.body.appendChild(scoreDiv) 
@@ -801,6 +803,7 @@ function submitButtonEventListener(){
      //other wise it would check the level the user is currently to determine button available to them
      else{
       if(level < (questionsArray.length /10)){
+        scoreDiv.style.color = "rgb(89, 163, 7)"
          scoreDiv.appendChild(nextLevelButton)
          scoreDiv.appendChild(reviewButton)
          document.body.appendChild(scoreDiv)
@@ -812,3 +815,5 @@ function submitButtonEventListener(){
       }
      }
 }
+
+// code written by Emmanuel Onaeko , follow me on linkedin at Onaeko Emmanuel 

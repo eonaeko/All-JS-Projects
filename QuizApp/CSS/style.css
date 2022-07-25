@@ -1,39 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&family=Edu+VIC+WA+NT+Beginner:wght@400;500;700&display=swap');
 body{
     margin: 0;
     padding: 0;
-    /* width: 100vw; */
-    display: flex;
+    /* display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: center; */
     background-color: rgba(28, 126, 214 ,.3);
     box-sizing: border-box;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    /* font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; */
+    /* font-family: 'Edu VIC WA NT Beginner', cursive; */
+    font-family: 'Poppins', sans-serif;
 }
+nav{
+    background-color: #fff;
+    height: 50px;
+    box-sizing: border-box;
+    font-family: 'Edu VIC WA NT Beginner', cursive;
+}
+nav h1 , nav div{
+    display: inline; 
+}
+nav h1 {
+    font-size: 32px;
+    padding: 1rem;
+}
+nav div{
+    margin-left: -18px;
+    font-style: italic;
+    font-size: 14px;
+    /* padding-top: 10rem; */
+    
+}
+
 i{
     margin: 0 5px;
 }
 
  #start-button{
      display: block;
-     width: 300px;
+     width: 250px;
      height: 80px;
      border: none;
      background-color: #59A307;
      margin:  15rem auto;
      font-size: 24px;
+     font-style: italic;
      color: #fff;
      border-radius: 10px;
  }
 
 .quiz-container{
     display: none;
-     margin:  9rem auto; 
+     margin:  4rem auto; 
     border-radius: 10px;
     width: 500px;
     background-color: #fff ;
     color: black;
     position: relative;
-    box-shadow: 0 4px 4px rgba(0, 0, 0, .5) , 0 4px 4px rgba(0, 0, 0, .5) 
+    box-shadow: 0 4px 4px rgba(0, 0, 0, .5) , 0 4px 4px rgba(0, 0, 0, .5) ;
+    animation: slideIN 1s ease-in 0s 1 normal ;
 }
 .quiz-container .progress-bar{
     border-top-left-radius: 10px;
@@ -46,8 +71,8 @@ i{
     width: 100px;
     height: 28px;
     border: .1px dashed black;
-    font-size: 11px;
-    font-weight: 900;
+    font-size: 9px;
+    font-weight: 600;
     margin-top: 5px;
     padding: 10px 0 10px 10px;
     border-radius: 10px;
@@ -60,6 +85,9 @@ i{
 .questions-holder{
     padding: 2rem;
     margin-left:-.8rem ;
+}
+.slideIN{
+    animation: slideIN 1s ease-in 0s 1 normal ;
 }
 .questions-holder ul li{
     list-style-type: none;
@@ -115,20 +143,36 @@ i{
     display: block;
     /* width: 300px;  */
      margin:  10rem 1em; 
-    font-size: 250%;
+    font-size: 32px;
     text-align: center;
     color: rgb(89, 163, 7);
+    font-family: 'Edu VIC WA NT Beginner', cursive; 
     
 }
 #score-result button {
      display: block;
-     width: 300px;
+     width: 250px;
      height: 80px;
      border: none;
      font-size: 24px;
+     font-style: italic;
      border-radius: 10px;
-     margin:0 auto;
      margin: 1rem auto;
+}
+#score-result .replay{
+    background-color: rgb(255, 0, 0);
+    color: #fff;
+}
+#score-result .review{
+    color: #59A307;
+}
+#score-result .next-level{
+    background-color: #59A307;
+    color: #fff;
+}
+#score-result .restart{
+    background-color: #59A307;
+    color: #fff;
 }
 
 
@@ -145,4 +189,13 @@ i{
     border:none;
     } */
    
+}
+@keyframes slideIN {
+    0%{
+        transform: translateX(0);
+    }
+    100%{
+        transform: translateX(20px);
+    }
+    
 }
